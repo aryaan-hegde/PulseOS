@@ -652,7 +652,7 @@
 	)
 	(rectangle
 		(start 171.704 30.226)
-		(end 250.698 64.008)
+		(end 250.698 61.976)
 		(stroke
 			(width 0)
 			(type default)

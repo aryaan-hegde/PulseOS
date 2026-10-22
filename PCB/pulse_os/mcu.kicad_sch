@@ -3431,7 +3431,7 @@
 	)
 	(rectangle
 		(start 49.53 53.34)
-		(end 160.02 224.79)
+		(end 173.355 224.79)
 		(stroke
 			(width 0)
 			(type default)
@@ -3476,6 +3476,18 @@
 			)
 		)
 		(uuid "2ae87e0e-9534-4aae-ba1a-4a53083863e6")
+	)
+	(text "*GPIO0 set to GPIO\n GPIO1-3 set to SPI"
+		(exclude_from_sim no)
+		(at 139.192 99.314 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+				(thickness 0.1905)
+			)
+			(justify left)
+		)
+		(uuid "8b81ab2f-f35f-442f-a61f-71046024e3a7")
 	)
 	(text "Decoupling capacitors"
 		(exclude_from_sim no)
@@ -3827,6 +3839,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 110.49) (xy 144.78 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "116f6eec-bbcc-46f3-a60c-65f5b655d8c2")
+	)
+	(wire
+		(pts
 			(xy 243.84 33.02) (xy 247.65 33.02)
 		)
 		(stroke
@@ -4117,6 +4139,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 107.95) (xy 144.78 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47fa5fab-d91b-4dd1-b4af-fde4c2a92bfd")
+	)
+	(wire
+		(pts
 			(xy 118.11 77.47) (xy 118.11 69.85)
 		)
 		(stroke
@@ -4294,6 +4326,16 @@
 			(type default)
 		)
 		(uuid "6ce68c6e-a832-4b1b-929a-5d26d373d269")
+	)
+	(wire
+		(pts
+			(xy 152.4 113.03) (xy 158.75 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d239435-764b-427e-9437-1cbf112b8fc7")
 	)
 	(wire
 		(pts
@@ -4847,6 +4889,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 105.41) (xy 144.78 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c90902f5-691a-4baf-bd02-6fd78f4ba102")
+	)
+	(wire
+		(pts
 			(xy 247.65 33.02) (xy 259.08 33.02)
 		)
 		(stroke
@@ -4877,6 +4929,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 105.41) (xy 158.75 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9780a37-2420-4c57-84b7-ef7879d65b48")
+	)
+	(wire
+		(pts
 			(xy 243.84 31.75) (xy 243.84 33.02)
 		)
 		(stroke
@@ -4897,6 +4959,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 110.49) (xy 158.75 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df4fc2e3-7153-40a1-90a9-7df9110c43f8")
+	)
+	(wire
+		(pts
 			(xy 74.93 148.59) (xy 87.63 148.59)
 		)
 		(stroke
@@ -4914,6 +4986,16 @@
 			(type default)
 		)
 		(uuid "e4d6c066-ec7a-4f0f-9788-34bd37d05a2b")
+	)
+	(wire
+		(pts
+			(xy 138.43 113.03) (xy 144.78 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea0347d6-ddb9-4a4c-856a-677eef716c92")
 	)
 	(wire
 		(pts
@@ -4964,6 +5046,16 @@
 			(type default)
 		)
 		(uuid "f05feca1-ae4b-4e4c-b9b0-20e7cfa867a8")
+	)
+	(wire
+		(pts
+			(xy 152.4 107.95) (xy 158.75 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f18242ab-12fb-4f3a-ae7f-36979613c793")
 	)
 	(wire
 		(pts
@@ -5210,6 +5302,102 @@
 			(justify left bottom)
 		)
 		(uuid "f470f445-962c-4cb4-9202-84cf38cc8fde")
+	)
+	(global_label "LCD_SCL"
+		(shape output)
+		(at 158.75 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "466dfec0-8c45-4d34-a9f4-a9ef2caff958")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 169.7785 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "LCD_CS"
+		(shape output)
+		(at 158.75 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "51b407e6-dab0-4cf9-a3e5-759221dfcb71")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 168.7504 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "LCD_DC"
+		(shape output)
+		(at 158.75 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "56f2f8e2-04d5-4c62-96d9-50f64ba4d77a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 168.8109 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "LCD_SDA"
+		(shape output)
+		(at 158.75 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5de9d8e8-09f2-4887-8eb6-f6bfe9e923c2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 169.839 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 	)
 	(global_label "USB_D+"
 		(shape input)
@@ -6121,6 +6309,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 148.59 110.49 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3067f0b2-c5f1-4d6a-b03c-9747cb390da4")
+		(property "Reference" "R12"
+			(at 143.51 109.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220"
+			(at 154.686 109.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 148.844 109.474 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 148.59 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cfdd42c3-86a9-461b-b19d-da5929231fd6")
+		)
+		(pin "2"
+			(uuid "8ef4745c-14ae-4649-9d76-b39ceaef292b")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 82.55 82.55 0)
 		(unit 1)
@@ -6431,6 +6698,85 @@
 			(project "pulse_os"
 				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
 					(reference "#PWR0101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 148.59 113.03 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "402056dc-2ac3-4656-94df-d37499cdc508")
+		(property "Reference" "R13"
+			(at 143.51 112.014 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220"
+			(at 154.686 112.014 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 148.844 112.014 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 148.59 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b36866d8-e072-47cf-836e-c7524898da30")
+		)
+		(pin "2"
+			(uuid "af3646a0-3b4f-4c31-9d7b-3edb38ff2c69")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -7734,6 +8080,85 @@
 			(project "pulse_os"
 				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
 					(reference "#PWR0142")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 148.59 105.41 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8c342f2a-0c15-4ed6-a85d-b03ca0828434")
+		(property "Reference" "R15"
+			(at 143.51 104.14 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220"
+			(at 154.686 104.14 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 148.844 104.394 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 148.59 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5f423470-8e91-471d-bc2a-3db5da33336c")
+		)
+		(pin "2"
+			(uuid "ce88bbab-ff41-469f-8ae1-2268e9209f70")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -9886,6 +10311,85 @@
 			(project "pulse_os"
 				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
 					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 148.59 107.95 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e8758a1b-504e-4454-8296-4d3ee00084fd")
+		(property "Reference" "R14"
+			(at 143.51 106.934 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220"
+			(at 154.686 106.68 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 148.844 106.934 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 148.59 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "14690459-7efe-4433-b837-597e1872685c")
+		)
+		(pin "1"
+			(uuid "880c468b-0930-4dc9-acff-7cd49b2ff718")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/222487e4-cd90-41b3-8828-de9c585d6e76"
+					(reference "R14")
 					(unit 1)
 				)
 			)
