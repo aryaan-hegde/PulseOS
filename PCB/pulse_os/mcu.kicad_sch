@@ -3477,7 +3477,19 @@
 		)
 		(uuid "2ae87e0e-9534-4aae-ba1a-4a53083863e6")
 	)
-	(text "*GPIO0 set to GPIO\n GPIO1-3 set to SPI"
+	(text "*GPIO4-8 set to GPIO*"
+		(exclude_from_sim no)
+		(at 143.256 129.032 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+				(thickness 0.1905)
+			)
+			(justify left)
+		)
+		(uuid "76f82cbd-b98d-48a0-b156-6fcc704ec2a5")
+	)
+	(text "*GPIO0 set to GPIO\n GPIO1-3 set to SPI*"
 		(exclude_from_sim no)
 		(at 139.192 99.314 0)
 		(effects
@@ -4459,6 +4471,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 125.73) (xy 158.75 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "864bd9d4-d340-42c0-b133-da640f4b144b")
+	)
+	(wire
+		(pts
 			(xy 107.95 95.25) (xy 110.49 95.25)
 		)
 		(stroke
@@ -4519,6 +4541,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 118.11) (xy 158.75 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c695aff-d10d-4aa0-bd18-c4e5f23bcaf7")
+	)
+	(wire
+		(pts
 			(xy 337.82 106.68) (xy 349.25 106.68)
 		)
 		(stroke
@@ -4546,6 +4578,16 @@
 			(type default)
 		)
 		(uuid "900739cb-cce2-454b-98ed-26548f1ba453")
+	)
+	(wire
+		(pts
+			(xy 138.43 115.57) (xy 158.75 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "907f531f-b259-40d7-b441-3a6987c2223f")
 	)
 	(wire
 		(pts
@@ -4926,6 +4968,26 @@
 			(type default)
 		)
 		(uuid "cfcfe3f0-ad46-41ef-9b85-cad9c54ef49e")
+	)
+	(wire
+		(pts
+			(xy 138.43 120.65) (xy 158.75 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d425e3e5-3b0d-479a-9005-92c97db5a310")
+	)
+	(wire
+		(pts
+			(xy 138.43 123.19) (xy 158.75 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7adaff0-f6d5-4dc4-adfd-0713f1ace978")
 	)
 	(wire
 		(pts
@@ -5375,6 +5437,30 @@
 			)
 		)
 	)
+	(global_label "IMU_SDA"
+		(shape bidirectional)
+		(at 158.75 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5801902d-13dc-4795-9203-03d2e0bac97a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.7689 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "LCD_SDA"
 		(shape output)
 		(at 158.75 113.03 0)
@@ -5388,6 +5474,30 @@
 		(uuid "5de9d8e8-09f2-4887-8eb6-f6bfe9e923c2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 169.839 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "IMU_INT2"
+		(shape input)
+		(at 158.75 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "74a5d033-f1a5-4681-8258-9e52c83e6d33")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.2019 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5422,6 +5532,78 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "IMU_SCL"
+		(shape bidirectional)
+		(at 158.75 118.11 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7b4ed066-d3e8-45bd-8e0a-e9bfa95c2dca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.7084 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "IMU_DRDY"
+		(shape input)
+		(at 158.75 125.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c0af32b2-305d-414c-91ce-d8eb9e6806f6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.9881 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "IMU_INT1"
+		(shape input)
+		(at 158.75 120.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c76777ec-b9ae-442a-ae63-e2825218bf91")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.2019 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6784,7 +6966,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 149.86 130.81 0)
+		(at 152.4 162.56 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -6795,7 +6977,7 @@
 		(dnp no)
 		(uuid "40a5e119-3a50-45a2-8bb5-49931f6c562f")
 		(property "Reference" "#PWR0143"
-			(at 149.86 137.16 0)
+			(at 152.4 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6806,7 +6988,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 149.733 135.2042 0)
+			(at 152.273 166.9542 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6816,7 +6998,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 130.81 0)
+			(at 152.4 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6827,7 +7009,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 130.81 0)
+			(at 152.4 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6838,7 +7020,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 130.81 0)
+			(at 152.4 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7124,7 +7306,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 149.86 127 0)
+		(at 152.4 158.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7134,7 +7316,7 @@
 		(dnp no)
 		(uuid "4e35c82b-d4f4-4069-98ff-3a9b13c5647f")
 		(property "Reference" "C23"
-			(at 152.781 125.8316 0)
+			(at 155.321 157.5816 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7145,7 +7327,7 @@
 			)
 		)
 		(property "Value" "10u"
-			(at 152.781 128.143 0)
+			(at 155.321 159.893 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7156,7 +7338,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 150.8252 130.81 0)
+			(at 153.3652 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7167,7 +7349,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 127 0)
+			(at 152.4 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7178,7 +7360,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 127 0)
+			(at 152.4 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7189,7 +7371,7 @@
 			)
 		)
 		(property "MPN" "CL05B104KP5VPNC"
-			(at 8.89 46.99 0)
+			(at 11.43 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7200,7 +7382,7 @@
 			)
 		)
 		(property "Purchase URL" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05B104KP5VPNC/20498482"
-			(at 8.89 46.99 0)
+			(at 11.43 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8347,7 +8529,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 149.86 123.19 0)
+		(at 152.4 154.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8357,7 +8539,7 @@
 		(dnp no)
 		(uuid "93e1c370-7920-4eed-a9a3-3b99a6056e43")
 		(property "Reference" "#PWR0108"
-			(at 149.86 127 0)
+			(at 152.4 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8368,7 +8550,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 150.241 118.7958 0)
+			(at 152.781 150.5458 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8378,7 +8560,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 123.19 0)
+			(at 152.4 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8389,7 +8571,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 123.19 0)
+			(at 152.4 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8400,7 +8582,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 123.19 0)
+			(at 152.4 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
