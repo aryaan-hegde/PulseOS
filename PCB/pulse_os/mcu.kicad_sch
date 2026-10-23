@@ -3477,18 +3477,6 @@
 		)
 		(uuid "2ae87e0e-9534-4aae-ba1a-4a53083863e6")
 	)
-	(text "*GPIO4-8 set to GPIO*"
-		(exclude_from_sim no)
-		(at 143.256 129.032 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-				(thickness 0.1905)
-			)
-			(justify left)
-		)
-		(uuid "76f82cbd-b98d-48a0-b156-6fcc704ec2a5")
-	)
 	(text "*GPIO0 set to GPIO\n GPIO1-3 set to SPI*"
 		(exclude_from_sim no)
 		(at 139.192 99.314 0)
@@ -5437,30 +5425,6 @@
 			)
 		)
 	)
-	(global_label "IMU_SDA"
-		(shape bidirectional)
-		(at 158.75 115.57 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5801902d-13dc-4795-9203-03d2e0bac97a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.7689 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "LCD_SDA"
 		(shape output)
 		(at 158.75 113.03 0)
@@ -5474,30 +5438,6 @@
 		(uuid "5de9d8e8-09f2-4887-8eb6-f6bfe9e923c2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 169.839 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "IMU_INT2"
-		(shape input)
-		(at 158.75 123.19 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "74a5d033-f1a5-4681-8258-9e52c83e6d33")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.2019 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5535,78 +5475,6 @@
 			)
 		)
 	)
-	(global_label "IMU_SCL"
-		(shape bidirectional)
-		(at 158.75 118.11 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7b4ed066-d3e8-45bd-8e0a-e9bfa95c2dca")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.7084 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "IMU_DRDY"
-		(shape input)
-		(at 158.75 125.73 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c0af32b2-305d-414c-91ce-d8eb9e6806f6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.9881 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "IMU_INT1"
-		(shape input)
-		(at 158.75 120.65 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c76777ec-b9ae-442a-ae63-e2825218bf91")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.2019 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "USB_D-"
 		(shape input)
 		(at 63.5 128.27 180)
@@ -5630,6 +5498,54 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "RTC_SCL"
+		(shape bidirectional)
+		(at 158.75 118.11 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ec21e3a1-03cf-42ce-84f7-dd78af4e5805")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.8293 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "RTC_SDA"
+		(shape bidirectional)
+		(at 158.75 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f17259ca-ca66-4ae9-8932-f59a6472f464")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.8898 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
