@@ -98,52 +98,6 @@
 		)
 	)
 	(sheet
-		(at 29.21 77.47)
-		(size 57.15 38.1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "bf32fd80-e3ae-47f4-8197-5a8edc116833")
-		(property "Sheetname" "Heartrate"
-			(at 29.21 76.7584 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "heartrate.kicad_sch"
-			(at 29.21 116.1546 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pulse_os"
-				(path "/2da23019-ab99-45ac-90f5-7a766864eccc"
-					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 29.21 27.94)
 		(size 57.15 34.29)
 		(exclude_from_sim no)

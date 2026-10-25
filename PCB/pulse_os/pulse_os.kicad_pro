@@ -661,7 +661,7 @@
         "uuid": "2da23019-ab99-45ac-90f5-7a766864eccc"
       }
     ],
-    "used_designators": "U1-5,R1-20,R23-24,J1-2,L1,#PWR1-17,#PWR20-24,#PWR101-109,#PWR114-116,#PWR118,#PWR122,#PWR124-131,#PWR138-143,C1-29,PD1-2,SW1-2,X1,A1,D1,Y2,XTAL1-2",
+    "used_designators": "U1-5,U7-10,R1-21,R23-42,J1-3,L1-2,#PWR1-18,#PWR20-53,#PWR101-111,#PWR114-116,#PWR118,#PWR122,#PWR124-131,#PWR138-143,C1-39,PD1-2,SW1-2,X1,A1,D1,Y2,Q1-3,XTAL1-2",
     "variants": []
   },
   "sheets": [
@@ -680,10 +680,6 @@
     [
       "1c27279a-8186-4eec-b1c3-ffd382720af4",
       "Peripherals"
-    ],
-    [
-      "bf32fd80-e3ae-47f4-8197-5a8edc116833",
-      "Heartrate"
     ]
   ],
   "text_variables": {},
