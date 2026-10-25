@@ -3556,6 +3556,12 @@
 		(uuid "299d2662-f88e-4abb-b902-247dfd5a1ee1")
 	)
 	(junction
+		(at 90.17 248.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2b46d3be-bff8-4b89-88c2-5b5fca975353")
+	)
+	(junction
 		(at 119.38 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4307,6 +4313,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 248.92) (xy 90.17 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cfc4bcb-860d-4da2-be5d-c6abee99efae")
+	)
+	(wire
+		(pts
 			(xy 95.25 119.38) (xy 95.25 132.08)
 		)
 		(stroke
@@ -4447,6 +4463,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 246.38) (xy 87.63 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "776eb17a-444d-4d36-b4a8-0ec4f0d5b712")
+	)
+	(wire
+		(pts
 			(xy 279.4 134.62) (xy 279.4 139.7)
 		)
 		(stroke
@@ -4467,7 +4493,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 250.19) (xy 90.17 246.38)
+			(xy 90.17 250.19) (xy 90.17 248.92)
 		)
 		(stroke
 			(width 0)
@@ -4834,6 +4860,16 @@
 			(type default)
 		)
 		(uuid "af712d10-dea6-4887-9362-0017cb8cdb87")
+	)
+	(wire
+		(pts
+			(xy 87.63 248.92) (xy 90.17 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0b3ef6c-7b6d-40cb-af6e-28300b53a33b")
 	)
 	(wire
 		(pts
@@ -7774,7 +7810,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF"
 			(at 368.681 92.583 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7877,7 +7913,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "15pF"
 			(at 282.321 131.953 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8326,7 +8362,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 175.26 146.0499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9786,7 +9822,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 184.15 146.0499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11288,7 +11324,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "15pF"
 			(at 245.491 130.683 0)
 			(show_name no)
 			(do_not_autoplace no)
