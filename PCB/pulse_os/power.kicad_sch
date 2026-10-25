@@ -3910,8 +3910,8 @@
 		(uuid "4096648d-8b8e-4839-b14a-0a183085ed7a")
 	)
 	(rectangle
-		(start 123.19 87.63)
-		(end 166.37 113.03)
+		(start 115.57 30.48)
+		(end 158.75 55.88)
 		(stroke
 			(width 0)
 			(type default)
@@ -3983,7 +3983,7 @@
 	)
 	(text "Battery connector"
 		(exclude_from_sim no)
-		(at 145.034 83.82 0)
+		(at 137.414 26.67 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -4585,7 +4585,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 102.87) (xy 135.89 102.87)
+			(xy 121.92 45.72) (xy 128.27 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4695,7 +4695,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 100.33) (xy 135.89 100.33)
+			(xy 121.92 43.18) (xy 128.27 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4885,7 +4885,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 95.25) (xy 129.54 100.33)
+			(xy 121.92 38.1) (xy 121.92 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4955,7 +4955,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 105.41) (xy 129.54 102.87)
+			(xy 121.92 48.26) (xy 121.92 45.72)
 		)
 		(stroke
 			(width 0)
@@ -7084,7 +7084,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 129.54 95.25 0)
+		(at 121.92 38.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7095,7 +7095,7 @@
 		(fields_autoplaced yes)
 		(uuid "632a2b39-66d7-44ff-a68a-851fe47c56c2")
 		(property "Reference" "#PWR027"
-			(at 129.54 99.06 0)
+			(at 121.92 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7106,7 +7106,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 129.54 90.2494 0)
+			(at 121.92 33.0994 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7116,7 +7116,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 95.25 0)
+			(at 121.92 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7127,7 +7127,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 95.25 0)
+			(at 121.92 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7138,7 +7138,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 129.54 95.25 0)
+			(at 121.92 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7881,7 +7881,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 129.54 105.41 0)
+		(at 121.92 48.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7892,7 +7892,7 @@
 		(fields_autoplaced yes)
 		(uuid "94617f01-43ff-47c7-8ce7-34a5ab702854")
 		(property "Reference" "#PWR028"
-			(at 129.54 111.76 0)
+			(at 121.92 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7903,7 +7903,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 129.54 110.49 0)
+			(at 121.92 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7913,7 +7913,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 105.41 0)
+			(at 121.92 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7924,7 +7924,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 105.41 0)
+			(at 121.92 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7935,7 +7935,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 129.54 105.41 0)
+			(at 121.92 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8196,7 +8196,7 @@
 	)
 	(symbol
 		(lib_id "S2B-PH-K-S:S2B-PH-K-S")
-		(at 143.51 100.33 0)
+		(at 135.89 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8207,7 +8207,7 @@
 		(fields_autoplaced yes)
 		(uuid "9fa9b134-98b3-4e4d-81ac-f362ae3d1064")
 		(property "Reference" "J3"
-			(at 149.86 100.3299 0)
+			(at 142.24 43.1799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8218,7 +8218,7 @@
 			)
 		)
 		(property "Value" "S2B-PH-K-S"
-			(at 149.86 102.8699 0)
+			(at 142.24 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8229,7 +8229,7 @@
 			)
 		)
 		(property "Footprint" "S2B-PH-K-S:JST_S2B-PH-K-S"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8241,7 +8241,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8252,7 +8252,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8263,7 +8263,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "4.8mm"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8275,7 +8275,7 @@
 			)
 		)
 		(property "CREATOR" "ASHISH"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8287,7 +8287,7 @@
 			)
 		)
 		(property "NOTES" ""
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8299,7 +8299,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8311,7 +8311,7 @@
 			)
 		)
 		(property "PARTREV" "NA"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8323,7 +8323,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8335,7 +8335,7 @@
 			)
 		)
 		(property "UNIT" "mm"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8347,7 +8347,7 @@
 			)
 		)
 		(property "MANUFACTURER" "JST"
-			(at 143.51 100.33 0)
+			(at 135.89 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
