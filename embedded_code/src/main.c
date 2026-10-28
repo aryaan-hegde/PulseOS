@@ -1,1 +1,3 @@
-// Main project file
+void main(){
+
+}
