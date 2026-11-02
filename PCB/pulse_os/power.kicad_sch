@@ -10082,7 +10082,7 @@
 				)
 			)
 		)
-		(property "Value" "PMEG2010AEH"
+		(property "Value" "CDBW140-G"
 			(at 44.7675 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
