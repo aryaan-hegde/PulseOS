@@ -9,4 +9,6 @@
 	(lib (name "S2B-PH-K-S") (type "KiCad") (uri "${KIPRJMOD}/symbols/S2B-PH-K-S.kicad_sym") (options "") (descr ""))
 	(lib (name "MCP73831T") (type "KiCad") (uri "${KIPRJMOD}/symbols/MCP73831T.kicad_sym") (options "") (descr ""))
 	(lib (name "MCP73832T-2ACI_OT") (type "KiCad") (uri "${KIPRJMOD}/symbols/MCP73832T-2ACI_OT.kicad_sym") (options "") (descr ""))
+	(lib (name "esd321") (type "KiCad") (uri "${KIPRJMOD}/symbols/esd321.kicad_sym") (options "") (descr ""))
+	(lib (name "esd441") (type "KiCad") (uri "${KIPRJMOD}/symbols/esd441.kicad_sym") (options "") (descr ""))
 )
