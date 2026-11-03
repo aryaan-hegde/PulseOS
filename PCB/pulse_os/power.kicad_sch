@@ -3917,6 +3917,12 @@
 		(uuid "03c5a99c-62ba-4d83-a3f2-f4f2839aa5b6")
 	)
 	(junction
+		(at 175.26 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "045a8327-515c-4ef7-8bb7-37f354153d11")
+	)
+	(junction
 		(at 238.76 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4055,7 +4061,7 @@
 		(uuid "c8adf44c-9f67-4ed1-bebb-dc8e4cf92bfc")
 	)
 	(junction
-		(at 181.61 45.72)
+		(at 175.26 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cf3a71cd-3aaf-42e7-8342-035d54d8e844")
@@ -4073,16 +4079,16 @@
 		(uuid "d6ebb32a-bae6-4826-af1c-fb6fea11fb14")
 	)
 	(junction
-		(at 191.77 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d70272fb-2488-4d73-b391-02c252b0fbe4")
-	)
-	(junction
 		(at 236.22 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e0decb45-63bf-4349-8c98-fb5fde3cb565")
+	)
+	(junction
+		(at 194.31 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e2dd03a0-63cb-4f4b-a896-7e534b42069f")
 	)
 	(junction
 		(at 35.56 140.97)
@@ -4238,6 +4244,16 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 62.23) (xy 194.31 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ea71992-495f-4e5d-ba5b-7c0d056abb38")
+	)
+	(wire
+		(pts
 			(xy 53.34 168.91) (xy 63.5 168.91)
 		)
 		(stroke
@@ -4295,16 +4311,6 @@
 			(type default)
 		)
 		(uuid "3101d05e-c1bb-4819-ab42-b7e46833467b")
-	)
-	(wire
-		(pts
-			(xy 181.61 45.72) (xy 187.96 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31d50571-e6f9-44d3-8d63-f82bc2da9b26")
 	)
 	(wire
 		(pts
@@ -4558,6 +4564,16 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 50.8) (xy 194.31 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57afc81c-0639-407c-93b2-2b00b2d50768")
+	)
+	(wire
+		(pts
 			(xy 110.49 83.82) (xy 113.03 83.82)
 		)
 		(stroke
@@ -4728,17 +4744,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 50.8) (xy 191.77 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81611919-3ae1-4b3e-ac35-15e031bfb91f")
-	)
-	(wire
-		(pts
-			(xy 175.26 45.72) (xy 181.61 45.72)
+			(xy 175.26 45.72) (xy 187.96 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4798,6 +4804,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 50.8) (xy 195.58 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b264985-7150-4703-bb98-f59128261ea6")
+	)
+	(wire
+		(pts
 			(xy 252.73 50.8) (xy 238.76 50.8)
 		)
 		(stroke
@@ -4805,6 +4821,16 @@
 			(type default)
 		)
 		(uuid "8c825c08-8639-43a9-88db-ce3ecbab924e")
+	)
+	(wire
+		(pts
+			(xy 175.26 63.5) (xy 194.31 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cf51958-2916-45b7-99f2-23e7064f1677")
 	)
 	(wire
 		(pts
@@ -4825,16 +4851,6 @@
 			(type default)
 		)
 		(uuid "8f3536a4-40a7-4501-8d67-8cd49f3582ff")
-	)
-	(wire
-		(pts
-			(xy 191.77 45.72) (xy 195.58 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9068e6f9-14c2-4b5a-b7ff-93ce45009fff")
 	)
 	(wire
 		(pts
@@ -4888,6 +4904,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 63.5) (xy 175.26 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cb8d1f4-049c-4aed-9ce5-ff42381679a3")
+	)
+	(wire
+		(pts
 			(xy 66.04 62.23) (xy 66.04 58.42)
 		)
 		(stroke
@@ -4895,16 +4921,6 @@
 			(type default)
 		)
 		(uuid "9cdfe7c7-8cd8-4286-b1d3-d19547520be0")
-	)
-	(wire
-		(pts
-			(xy 191.77 50.8) (xy 191.77 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fc1e4c1-8f18-430f-8aa3-129f3716c8b9")
 	)
 	(wire
 		(pts
@@ -4988,7 +5004,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 45.72) (xy 191.77 45.72)
+			(xy 187.96 45.72) (xy 195.58 45.72)
 		)
 		(stroke
 			(width 0)
@@ -5085,6 +5101,16 @@
 			(type default)
 		)
 		(uuid "c2c9a2dd-be42-4291-86d2-c2d9df2f0a2c")
+	)
+	(wire
+		(pts
+			(xy 175.26 66.04) (xy 175.26 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c30eff6a-0096-4a00-954a-bfacf81afc7a")
 	)
 	(wire
 		(pts
@@ -5435,6 +5461,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "TPS_EN"
+		(shape input)
+		(at 193.04 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7c617344-7015-4345-be62-f4a8b83e265e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.1606 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -6225,7 +6275,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 181.61 53.34 0)
+		(at 175.26 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6236,7 +6286,7 @@
 		(fields_autoplaced yes)
 		(uuid "3176959e-d3d4-4980-a61a-11ae690f5642")
 		(property "Reference" "#PWR037"
-			(at 181.61 59.69 0)
+			(at 175.26 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6247,7 +6297,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 181.61 58.42 0)
+			(at 175.26 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6257,7 +6307,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 181.61 53.34 0)
+			(at 175.26 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6268,7 +6318,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 181.61 53.34 0)
+			(at 175.26 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6279,7 +6329,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 181.61 53.34 0)
+			(at 175.26 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7075,7 +7125,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 181.61 49.53 0)
+		(at 175.26 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7083,10 +7133,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "559965f3-b1cf-4f54-8bf9-7beaea9c3c02")
 		(property "Reference" "C34"
-			(at 185.42 48.2599 0)
+			(at 176.53 47.244 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7097,7 +7146,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 185.42 50.7999 0)
+			(at 176.53 52.832 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7108,7 +7157,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
-			(at 182.5752 53.34 0)
+			(at 176.2252 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7119,7 +7168,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 181.61 49.53 0)
+			(at 175.26 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7130,7 +7179,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 181.61 49.53 0)
+			(at 175.26 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7150,6 +7199,85 @@
 			(project "pulse_os"
 				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
 					(reference "C34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 194.31 58.42 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "56c6f7e6-4a75-40d4-ad80-38442502ff90")
+		(property "Reference" "R26"
+			(at 189.23 58.166 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 191.77 58.42 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+			(at 193.294 58.166 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 194.31 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9094eefd-42e3-43d2-b7a8-0c2a155be90a")
+		)
+		(pin "2"
+			(uuid "412bfb18-7441-4b70-86ce-9eba3af89244")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "R26")
 					(unit 1)
 				)
 			)
