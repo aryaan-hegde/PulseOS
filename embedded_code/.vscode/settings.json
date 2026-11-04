@@ -1,0 +1,11 @@
+{
+    "chat.disableAIFeatures": true,
+    "chat.agent.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.inlineSuggest.enable": false,
+    "extensions.ignoreRecommendations": true
+}
