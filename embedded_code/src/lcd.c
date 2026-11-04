@@ -122,17 +122,6 @@ void init_display(){
     start_init(initcmd);
 }
 
-void start_init(const uint8_t *start_seq){
-    uint8_t cmd;
-    while ((cmd = *start_seq++) != 0) {
-        uint8_t x = *start_seq++;
-        uint8_t n = x & 0x7F;
-        command_seq(cmd, start_seq, n);
-        start_seq += n;
-        if (x & 0x80) sleep_ms(150);
-    }
-}
-
 void command_seq(uint8_t cmd, const uint8_t *args, size_t n){
     gpio_put(LCD_CS, 0);
     gpio_put(LCD_DC, 0);                      // command
@@ -144,10 +133,50 @@ void command_seq(uint8_t cmd, const uint8_t *args, size_t n){
     gpio_put(LCD_CS, 1);
 }
 
+void start_init(const uint8_t *start_seq){
+    uint8_t cmd;
+    while ((cmd = *start_seq++) != 0) {
+        uint8_t x = *start_seq++;
+        uint8_t n = x & 0x7F;
+        command_seq(cmd, start_seq, n);
+        start_seq += n;
+        if (x & 0x80) sleep_ms(150);
+    }
+}
+
+void fill_screen(uint16_t color){
+    uint8_t col[] = {0, 0, 0, 239};
+    uint8_t row[] = {0, 0, 0, 239};
+    command_seq(0x2A, col, 4); //column address set
+    command_seq(0x2B, row, 4); //row address set
+
+    uint8_t cmd = 0x2C; // memory write
+    gpio_put(LCD_CS, 0);
+    gpio_put(LCD_DC, 0);
+    spi_write_blocking(spi0, &cmd, 1);
+    gpio_put(LCD_DC, 1);
+
+    uint8_t px[2] = { color >> 8, color & 0xFF };
+    for (int i = 0; i < 240 * 240; i++)
+        spi_write_blocking(spi0, px, 2);
+    gpio_put(LCD_CS, 1);
+}
+
+void turnoff_seq(){
+    gpio_put(LCD_CS, 0);
+    gpio_put(LCD_DC, 0);
+    uint8_t turnoff_cmd = 0x28;
+    spi_write_blocking(spi0, &turnoff_cmd, 1);
+    gpio_put(LCD_CS, 1);
+}
+
 int main(){
     init_spi();
     init_display();
+    fill_screen(0x0F00);
+    sleep_ms(2000);
+    turnoff_seq();
     for(;;){ 
     }
-    return;
+    return 0;
 }
