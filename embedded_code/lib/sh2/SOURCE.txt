@@ -1,0 +1,9 @@
+CEVA SH2 sensor hub driver (used to talk to the BNO085 IMU).
+
+Copied unmodified from https://github.com/ceva-dsp/sh2
+commit b514b1e2586ddc195e553dac89fc94c637b25298 (v1.4.0, 2023-09-14).
+Licensed under the Apache License 2.0 (see the header in each file).
+
+This is the same library the Adafruit BNO08x Arduino library uses internally.
+The Pico SDK glue code (the "HAL") that connects it to our I2C bus is in
+src/imu.c.

@@ -12,4 +12,5 @@
 	(lib (name "esd321") (type "KiCad") (uri "${KIPRJMOD}/symbols/esd321.kicad_sym") (options "") (descr ""))
 	(lib (name "esd441") (type "KiCad") (uri "${KIPRJMOD}/symbols/esd441.kicad_sym") (options "") (descr ""))
 	(lib (name "AOTA-B201610S3R3-101-T") (type "KiCad") (uri "${KIPRJMOD}/symbols/AOTA-B201610S3R3-101-T.kicad_sym") (options "") (descr ""))
+	(lib (name "SM03B_SRSS_TB") (type "KiCad") (uri "${KIPRJMOD}/symbols/SM03B_SRSS_TB.kicad_sym") (options "") (descr ""))
 )
