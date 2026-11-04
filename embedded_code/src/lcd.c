@@ -5,21 +5,22 @@
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 
-void init_spi();
-void init_display();
-void start_init(const uint8_t *start_seq);
-
 #define LCD_CS 1
 #define LCD_SCL 2
 #define LCD_SDA 3
 #define LCD_DC 0
-#define LCD_RST 4
+#define LCD_RST 12
 
 #define GC9A01A_INREGEN2 0xEF
 #define GC9A01A_INREGEN1 0xFE
 #define GC9A01A_MADCTL 0x36
-#define MADCTL_MX 0x40
-#define MADCTL_BGR 0x08
+#define MADCTL_MY 0x80  ///< Bottom to top
+#define MADCTL_MX 0x40  ///< Right to left
+#define MADCTL_MV 0x20  ///< Reverse Mode
+#define MADCTL_ML 0x10  ///< LCD refresh Bottom to top
+#define MADCTL_RGB 0x00 ///< Red-Green-Blue pixel order
+#define MADCTL_BGR 0x08 ///< Blue-Green-Red pixel order
+#define MADCTL_MH 0x04  ///< LCD refresh right to left
 #define GC9A01A_COLMOD 0x3A
 #define GC9A01A1_POWER1 0xC1   ///< Power Control 1
 #define GC9A01A1_POWER2 0xC3   ///< Power Control 2
@@ -34,6 +35,10 @@ void start_init(const uint8_t *start_seq);
 #define GC9A01A_INVON 0x21     ///< Display Inversion ON
 #define GC9A01A_SLPOUT 0x11    ///< Sleep Out
 #define GC9A01A_DISPON 0x29    ///< Display ON
+
+void init_spi();
+void init_display();
+void start_init(const uint8_t *start_seq);
 
 static const uint8_t initcmd[] = {
     GC9A01A_INREGEN2, 0,
