@@ -3,6 +3,9 @@
 // environment in platformio.ini, which leaves out main.c so the LCD code
 // doesn't run. The normal "proton" build skips this whole file.
 //
+// Build/upload with:  pio run -e rtc_test -t upload
+// Then open the serial monitor at 115200 baud.
+//
 // Commands (type in the serial monitor, then press Enter):
 //   set 2026-11-03 14:05:00     set the date and time (24 hour)
 //   time                        print the time once
