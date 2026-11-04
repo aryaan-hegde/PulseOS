@@ -61,6 +61,25 @@ bool i2c_bus_read(i2c_inst_t *i2c, uint8_t addr, uint8_t *data, size_t len) {
     return n == (int)len;
 }
 
+bool i2c_bus_read_reg(i2c_inst_t *i2c, uint8_t addr, uint8_t reg, uint8_t *data, size_t len) {
+    // Step 1: send the register number. "nostop = true" leaves the bus open,
+    // so step 2 starts with a repeated START instead of STOP + START.
+    if (i2c_write_timeout_us(i2c, addr, &reg, 1, true, timeout_us(1)) != 1) {
+        return false;
+    }
+    // Step 2: read; the device sends reg, reg+1, reg+2, ...
+    return i2c_bus_read(i2c, addr, data, len);
+}
+
+bool i2c_bus_write_reg(i2c_inst_t *i2c, uint8_t addr, uint8_t reg, const uint8_t *data, size_t len) {
+    // One transfer: the register number first, then the data bytes.
+    uint8_t buf[1 + I2C_BUS_MAX_REG_WRITE];
+    if (len > I2C_BUS_MAX_REG_WRITE) return false;
+    buf[0] = reg;
+    for (size_t i = 0; i < len; i++) buf[1 + i] = data[i];
+    return i2c_bus_write(i2c, addr, buf, len + 1);
+}
+
 bool i2c_bus_probe(i2c_inst_t *i2c, uint8_t addr) {
     uint8_t dummy;
     return i2c_bus_read(i2c, addr, &dummy, 1);

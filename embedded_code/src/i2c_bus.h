@@ -45,6 +45,13 @@ bool i2c_bus_write(i2c_inst_t *i2c, uint8_t addr, const uint8_t *data, size_t le
 // Read len bytes from a device. Returns true if all bytes were read.
 bool i2c_bus_read(i2c_inst_t *i2c, uint8_t addr, uint8_t *data, size_t len);
 
+// Register access for "normal" register-based chips (RTC, heart rate sensor).
+// read_reg:  read len bytes starting at register reg.
+// write_reg: write len bytes starting at register reg (len <= 16).
+#define I2C_BUS_MAX_REG_WRITE 16
+bool i2c_bus_read_reg(i2c_inst_t *i2c, uint8_t addr, uint8_t reg, uint8_t *data, size_t len);
+bool i2c_bus_write_reg(i2c_inst_t *i2c, uint8_t addr, uint8_t reg, const uint8_t *data, size_t len);
+
 // Quick "is anybody at this address?" check (a 1-byte read).
 bool i2c_bus_probe(i2c_inst_t *i2c, uint8_t addr);
 
