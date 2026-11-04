@@ -4300,10 +4300,6 @@
 		(color 0 0 0 0)
 		(uuid "e5df6c9c-b78a-4a44-ab1a-aa4fc12cf3a7")
 	)
-	(no_connect
-		(at 193.04 36.83)
-		(uuid "abc0093d-8ef9-404a-a824-5a786e613e35")
-	)
 	(wire
 		(pts
 			(xy 83.82 46.99) (xy 83.82 39.37)
@@ -6115,6 +6111,30 @@
 		(uuid "e545403e-e740-4657-a3fc-fdad02a86e00")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 290.9669 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "LCD_RST"
+		(shape input)
+		(at 193.04 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e63ef430-077a-4b0d-8e16-e230521d5d24")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.072 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
