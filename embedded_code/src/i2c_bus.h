@@ -23,17 +23,17 @@
 
 // ---- Pin and speed settings (change these to match your wiring) ----------
 // RP2350 rule: GPIO n can only be I2C(n/2 % 2), SDA when n is even, SCL when
-// n is odd. So GP4/GP5 are I2C0 and GP6/GP7 are I2C1.
+// n is odd. So GP36/GP37 are I2C0 and GP6/GP7 are I2C1.
 
 // I2C0: MAX30101 heart rate + MCP7940N RTC on the PCB
-#define I2C_BUS0_SDA_PIN   4
-#define I2C_BUS0_SCL_PIN   5
-#define I2C_BUS0_BAUD_HZ   400000   // 400 kHz "fast mode", all parts support it
+#define I2C_BUS0_SDA_PIN 36
+#define I2C_BUS0_SCL_PIN 37
+#define I2C_BUS0_BAUD_HZ 400000 // 400 kHz "fast mode", all parts support it
 
 // I2C1: BNO085 IMU on the PCB
-#define I2C_BUS1_SDA_PIN   6
-#define I2C_BUS1_SCL_PIN   7
-#define I2C_BUS1_BAUD_HZ   400000
+#define I2C_BUS1_SDA_PIN 6
+#define I2C_BUS1_SCL_PIN 7
+#define I2C_BUS1_BAUD_HZ 400000
 
 // Set up the pins and peripheral for one bus (i2c0 or i2c1). It is safe to
 // call this from every driver: only the first call does anything.
