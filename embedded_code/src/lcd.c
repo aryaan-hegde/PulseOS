@@ -4,6 +4,7 @@
 #include <string.h>
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
+#include "image.h"
 
 #define LCD_CS 1
 #define LCD_SCL 2
@@ -162,6 +163,19 @@ void fill_screen(uint16_t color){
     gpio_put(LCD_CS, 1);
 }
 
+static void set_window(uint16_t start_x, uint16_t start_y, uint16_t end_x, uint16_t end_y){
+    uint8_t col[] = {start_x >> 8, start_x & 0xFF, end_x >>8, end_x & 0xFF};
+    uint8_t row[] = {start_y >> 8, start_y & 0xFF, end_y >>8, end_y & 0xFF};
+    command_seq(0x2A, col, 4);
+    command_seq(0x2B, row, 4);
+}
+
+void display_image(const unsigned char *image, uint16_t x, uint16_t y, uint16_t w, uint16_t h){
+    uint8_t cmd = 0x2c; //memory write 
+    set_window(x, y, x+w-1, y+h-1);
+    command_seq(cmd, image, (size_t)(w*h*2));
+}
+
 void turnoff_seq(){
     gpio_put(LCD_CS, 0);
     gpio_put(LCD_DC, 0);
@@ -173,8 +187,9 @@ void turnoff_seq(){
 int main(){
     init_spi();
     init_display();
-    fill_screen(0x0F00);
-    sleep_ms(2000);
+    fill_screen(0x0000);
+    display_image(gImage_1, 90, 90, 60, 60);
+    sleep_ms(5000);
     turnoff_seq();
     for(;;){ 
     }
