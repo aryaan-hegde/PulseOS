@@ -4,7 +4,8 @@
 #include <string.h>
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
-#include "image.h"
+#include "LCD_Helpers/image.h"
+#include "LCD_Helpers/GUI_Paint.h"
 
 #define LCD_CS 1
 #define LCD_SCL 2
@@ -36,6 +37,8 @@
 #define GC9A01A_INVON 0x21     ///< Display Inversion ON
 #define GC9A01A_SLPOUT 0x11    ///< Sleep Out
 #define GC9A01A_DISPON 0x29    ///< Display ON
+
+static uint16_t framebuf[240*240];
 
 void init_spi();
 void init_display();
@@ -170,6 +173,11 @@ static void set_window(uint16_t start_x, uint16_t start_y, uint16_t end_x, uint1
     command_seq(0x2B, row, 4);
 }
 
+void flush_screen(void){
+    set_window(0,0,239,239);
+    command_seq(0x2C, (const uint8_t *)framebuf, sizeof(framebuf));
+}
+
 void display_image(const unsigned char *image, uint16_t x, uint16_t y, uint16_t w, uint16_t h){
     uint8_t cmd = 0x2c; //memory write 
     set_window(x, y, x+w-1, y+h-1);
@@ -187,11 +195,14 @@ void turnoff_seq(){
 int main(){
     init_spi();
     init_display();
-    fill_screen(0x0000);
-    display_image(gImage_1, 90, 90, 60, 60);
-    sleep_ms(5000);
-    turnoff_seq();
-    for(;;){ 
-    }
+    //fill_screen(0x0000);
+    Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
+    Paint_Clear(0x0000);
+    Paint_DrawString_EN(40, 100, "Words are working", &Font16, 0x0000, 0xFFFF);
+    flush_screen();
+    //display_image(gImage_1, 90, 90, 60, 60);
+    
+    //sleep_ms(5000);
+    for(;;){}
     return 0;
 }
