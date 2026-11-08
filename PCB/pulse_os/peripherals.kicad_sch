@@ -5944,6 +5944,30 @@
 			)
 		)
 	)
+	(global_label "LCD_RST"
+		(shape input)
+		(at 193.04 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9589bae5-c226-47d9-9d5f-37d9c0600e13")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.072 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "I2C_BUS1_SDA"
 		(shape bidirectional)
 		(at 43.18 129.54 180)
