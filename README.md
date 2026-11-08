@@ -1,2 +1,2 @@
 # PulseOS
-A smartwatch that can detect, monitor and display your heart rate. Controlled with a custom RP2350-based PCB
+A smartwatch that can detect, monitor and display your heart rate. Contains a custom 4-layer, 35 mm circular PCB based on the RP2350B microcontroller with a heart-rate PPG sensor, RTC, IMU and TFT display peripherals. The smartwatch features a LiPo battery that can be charged through the PCB via a USB cable. Additionally, the board also contains a switchover mechanism so that you can power the watch solely through USB.
