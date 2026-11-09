@@ -192,17 +192,33 @@ void turnoff_seq(){
     gpio_put(LCD_CS, 1);
 }
 
+void DrawHeart(uint16_t color){
+    Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
+    //Paint_Clear(0x0000);
+    Paint_DrawCircle(90, 90, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(125, 90, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(90, 85, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(125, 85, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(108, 95, 10, color, 5, DRAW_FILL_FULL);
+    Paint_DrawLine(80, 90, 108, 130, color, 11, LINE_STYLE_SOLID);
+    Paint_DrawLine(135, 90, 108, 130, color, 11, LINE_STYLE_SOLID);
+    flush_screen();
+}
+
 int main(){
     init_spi();
     init_display();
-    //fill_screen(0x0000);
+    
     Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
     Paint_Clear(0x0000);
-    Paint_DrawString_EN(40, 100, "Words are working", &Font16, 0x0000, 0xFFFF);
-    flush_screen();
-    //display_image(gImage_1, 90, 90, 60, 60);
+    Paint_DrawString_EN(40, 180, "Shubh is so cute", &Font16, 0x0000, 0xFFFF);
     
     //sleep_ms(5000);
-    for(;;){}
+    for(;;){
+        DrawHeart(RED);
+        sleep_ms(1500);
+        DrawHeart(BLUE);
+        sleep_ms(500);
+    }
     return 0;
 }
