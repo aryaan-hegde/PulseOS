@@ -1348,6 +1348,192 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "ESD321DYAR_1"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "CR1"
+				(at 20.32 10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "ESD321DYAR"
+				(at 20.32 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "PulseOS Footprints:SOT5x3_DYA_TEX"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/gpn/esd321"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "ESD321DYAR"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT5x3_DYA_TEX SOT5x3_DYA_TEX-M SOT5x3_DYA_TEX-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ESD321DYAR_1_0_1"
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy 33.02 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 33.02 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 33.02 -5.08) (xy 33.02 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 40.64 0 180)
+					(length 7.62)
+					(name "I/O"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ESD321DYAR_1_1_1"
+				(pin passive line
+					(at 0 0 0)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCP73832T-2ACI_OT:MCP73832T-2ACI_OT"
 			(pin_names
 				(offset 1.016)
@@ -1357,29 +1543,27 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -12.7 8.62 0)
+			(property "Reference" "U9"
+				(at 0 12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
 			(property "Value" "MCP73832T-2ACI_OT"
-				(at -12.7 -11.62 0)
+				(at 0 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
-			(property "Footprint" "MCP73832T-2ACI_OT:SOT95P270X145-5N"
+			(property "Footprint" "PulseOS Footprints:MCP73832T"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1461,24 +1645,6 @@
 						)
 					)
 				)
-				(pin output line
-					(at 17.78 2.54 180)
-					(length 5.08)
-					(name "VBAT"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
 				(pin input line
 					(at -17.78 2.54 0)
 					(length 5.08)
@@ -1508,6 +1674,26 @@
 						)
 					)
 					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MCP73832T-2ACI_OT_1_0"
+				(pin passive line
+					(at 17.78 2.54 180)
+					(length 5.08)
+					(name "VBAT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -2485,8 +2671,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 2.54 0)
+			(property "Reference" "U8"
+				(at 1.27 20.32 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2496,7 +2682,7 @@
 				)
 			)
 			(property "Value" "TPS61099DRVR"
-				(at 0 0 0)
+				(at 1.27 17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2505,7 +2691,7 @@
 					)
 				)
 			)
-			(property "Footprint" "DRV0006A"
+			(property "Footprint" "PulseOS Footprints:DRV0006A"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2694,24 +2880,6 @@
 					)
 				)
 				(pin power_in line
-					(at 20.32 10.16 180)
-					(length 5.08)
-					(name "SW"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
 					(at -17.78 10.16 0)
 					(length 5.08)
 					(name "VIN"
@@ -2740,6 +2908,26 @@
 						)
 					)
 					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TPS61099DRVR_1_1"
+				(pin passive line
+					(at 20.32 10.16 180)
+					(length 5.08)
+					(name "SW"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2943,8 +3131,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "CR"
-				(at 20.32 10.16 0)
+			(property "Reference" "CR3"
+				(at 20.32 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2954,7 +3142,7 @@
 				)
 			)
 			(property "Value" "ESD441DPLR"
-				(at 20.32 7.62 0)
+				(at 20.32 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2963,7 +3151,7 @@
 					)
 				)
 			)
-			(property "Footprint" "X2SON2_DPL_TEX"
+			(property "Footprint" "PulseOS Footprints:ESD441DPYR"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3097,7 +3285,9 @@
 						)
 					)
 				)
-				(pin power_out line
+			)
+			(symbol "ESD441DPLR_1_1"
+				(pin passive line
 					(at 40.64 0 180)
 					(length 7.62)
 					(name "GND"
@@ -3650,6 +3840,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:VBUS"
 			(power global)
 			(pin_numbers
@@ -3839,6 +4144,18 @@
 		(uuid "4f7a885d-8cbd-43a0-9431-75e6a6359989")
 	)
 	(rectangle
+		(start 127 146.05)
+		(end 170.18 181.61)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "64503341-a29e-4e95-a569-583d9b727ad4")
+	)
+	(rectangle
 		(start 180.34 104.14)
 		(end 259.08 152.4)
 		(stroke
@@ -3897,6 +4214,18 @@
 			)
 		)
 		(uuid "6c419546-6c07-40a2-88ff-274dd96d73ff")
+	)
+	(text "Power flags"
+		(exclude_from_sim no)
+		(at 147.32 142.24 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.381)
+				(bold yes)
+			)
+		)
+		(uuid "84edefcd-7bc1-4657-85e9-bedc2582aaf5")
 	)
 	(text "USB Power"
 		(exclude_from_sim no)
@@ -4085,12 +4414,6 @@
 		(uuid "e0decb45-63bf-4349-8c98-fb5fde3cb565")
 	)
 	(junction
-		(at 194.31 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e2dd03a0-63cb-4f4b-a896-7e534b42069f")
-	)
-	(junction
 		(at 35.56 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4174,6 +4497,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 167.64) (xy 130.81 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11549485-3105-4a66-8538-0ec194b214c6")
+	)
+	(wire
+		(pts
 			(xy 50.8 172.72) (xy 50.8 168.91)
 		)
 		(stroke
@@ -4211,6 +4544,16 @@
 			(type default)
 		)
 		(uuid "183f369f-ce51-4239-a09a-aa0c6af261d9")
+	)
+	(wire
+		(pts
+			(xy 130.81 179.07) (xy 143.51 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a6e630a-9fd0-4a27-98fc-729391e73a01")
 	)
 	(wire
 		(pts
@@ -4314,6 +4657,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 179.07) (xy 130.81 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31660b68-221d-46bd-ac9c-3a9e40ef7d53")
+	)
+	(wire
+		(pts
 			(xy 110.49 60.96) (xy 113.03 60.96)
 		)
 		(stroke
@@ -4331,6 +4684,16 @@
 			(type default)
 		)
 		(uuid "33bc66eb-d8df-4468-bc75-491972eaf389")
+	)
+	(wire
+		(pts
+			(xy 143.51 167.64) (xy 143.51 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35e692db-b0a7-401e-a9ae-db862c980baa")
 	)
 	(wire
 		(pts
@@ -4451,6 +4814,16 @@
 			(type default)
 		)
 		(uuid "49b16661-f82b-48d3-bda1-8e9dbfb42d7c")
+	)
+	(wire
+		(pts
+			(xy 143.51 156.21) (xy 143.51 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a2e0628-3df8-4f34-b76d-7d6a97b4b4d1")
 	)
 	(wire
 		(pts
@@ -4724,6 +5097,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.67 154.94) (xy 153.67 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e214be5-07ec-4968-a1b3-557b88330e08")
+	)
+	(wire
+		(pts
 			(xy 237.49 118.11) (xy 246.38 118.11)
 		)
 		(stroke
@@ -4741,6 +5124,16 @@
 			(type default)
 		)
 		(uuid "7facbcec-ecd5-4f97-9359-08490489d1f2")
+	)
+	(wire
+		(pts
+			(xy 130.81 156.21) (xy 130.81 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80b30b23-2530-43db-8ffc-fc43638a317c")
 	)
 	(wire
 		(pts
@@ -4804,16 +5197,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 50.8) (xy 195.58 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b264985-7150-4703-bb98-f59128261ea6")
-	)
-	(wire
-		(pts
 			(xy 252.73 50.8) (xy 238.76 50.8)
 		)
 		(stroke
@@ -4851,6 +5234,16 @@
 			(type default)
 		)
 		(uuid "8f3536a4-40a7-4501-8d67-8cd49f3582ff")
+	)
+	(wire
+		(pts
+			(xy 130.81 156.21) (xy 143.51 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97951c7f-6d1f-4183-906e-d8a700b4ed68")
 	)
 	(wire
 		(pts
@@ -4921,6 +5314,16 @@
 			(type default)
 		)
 		(uuid "9cdfe7c7-8cd8-4286-b1d3-d19547520be0")
+	)
+	(wire
+		(pts
+			(xy 163.83 156.21) (xy 163.83 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1ed5621-7d64-4534-97c9-b63eaf4fb896")
 	)
 	(wire
 		(pts
@@ -5094,6 +5497,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 167.64) (xy 143.51 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd23acd4-c53c-4b4c-bb6d-42564e7b50d3")
+	)
+	(wire
+		(pts
 			(xy 68.58 143.51) (xy 66.04 143.51)
 		)
 		(stroke
@@ -5194,6 +5607,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 179.07) (xy 143.51 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4b5b202-6b63-4538-8161-887a2fb2a802")
+	)
+	(wire
+		(pts
 			(xy 110.49 66.04) (xy 110.49 60.96)
 		)
 		(stroke
@@ -5211,6 +5634,16 @@
 			(type default)
 		)
 		(uuid "d8436a77-4809-410a-8a8f-78a3d9f403e9")
+	)
+	(wire
+		(pts
+			(xy 153.67 156.21) (xy 163.83 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9c52fec-f94a-4164-88a7-e8c6ef542da3")
 	)
 	(wire
 		(pts
@@ -5271,6 +5704,16 @@
 			(type default)
 		)
 		(uuid "ed1b8f6d-fe8f-467f-b53f-de74cae0ca57")
+	)
+	(wire
+		(pts
+			(xy 194.31 50.8) (xy 195.58 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edcdda04-ef8c-4a73-a405-40772bedcba6")
 	)
 	(wire
 		(pts
@@ -5464,30 +5907,6 @@
 			)
 		)
 	)
-	(global_label "TPS_EN"
-		(shape input)
-		(at 193.04 50.8 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7c617344-7015-4345-be62-f4a8b83e265e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 183.1606 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "STAT"
 		(shape input)
 		(at 237.49 115.57 0)
@@ -5569,7 +5988,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 51.7652 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -5805,7 +6224,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+		(property "Footprint" "PulseOS Footprints:AP2112K_3_3"
 			(at 85.09 130.175 0)
 			(hide yes)
 			(show_name no)
@@ -5972,7 +6391,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MCP73832T-2ACI_OT:SOT95P270X145-5N"
+		(property "Footprint" "PulseOS Footprints:MCP73832T"
 			(at 219.71 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -6031,6 +6450,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 143.51 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24ef17c7-4a8a-4adf-a7fe-fc539cc0af38")
+		(property "Reference" "#FLG01"
+			(at 143.51 153.035 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 143.51 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 143.51 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a8777f15-ca4d-4b43-807b-af97d7897d08")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 252.73 59.69 0)
 		(unit 1)
@@ -6064,7 +6561,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 253.6952 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6146,7 +6643,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 247.3452 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -6225,7 +6722,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 237.744 61.976 90)
 			(hide yes)
 			(show_name no)
@@ -6460,7 +6957,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 59.944 170.434 90)
 			(hide yes)
 			(show_name no)
@@ -6542,7 +7039,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 267.6652 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6622,7 +7119,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:UQFN-16_1.8x2.6mm_P0.4mm"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 53.34 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6743,7 +7240,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 55.5752 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6900,7 +7397,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 75.184 49.784 90)
 			(hide yes)
 			(show_name no)
@@ -7058,7 +7555,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DRV0006A"
+		(property "Footprint" "PulseOS Footprints:DRV0006A"
 			(at 213.36 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -7156,7 +7653,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 176.2252 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -7235,7 +7732,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 193.294 58.166 90)
 			(hide yes)
 			(show_name no)
@@ -7314,7 +7811,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 86.614 75.184 90)
 			(hide yes)
 			(show_name no)
@@ -7394,7 +7891,7 @@
 				)
 			)
 		)
-		(property "Footprint" "X2SON2_DPL_TEX"
+		(property "Footprint" "PulseOS Footprints:ESD441DPYR"
 			(at 153.67 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -7835,6 +8332,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 153.67 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6cb17323-f0c5-40a8-b91c-b4b3a36a6d1d")
+		(property "Reference" "#PWR043"
+			(at 153.67 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 153.67 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 153.67 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 153.67 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9f3695cd-ef75-4bfd-ab32-160cae3d0e94")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 193.04 142.24 0)
 		(unit 1)
@@ -7991,6 +8566,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 163.83 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "78634d08-9e9e-491a-9811-245f3501fe11")
+		(property "Reference" "#FLG04"
+			(at 163.83 153.035 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 163.83 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 163.83 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "af1581f8-9c92-4419-926e-9753c8134cb5")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#FLG04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 35.56 148.59 0)
 		(unit 1)
@@ -8021,7 +8674,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 36.576 148.844 90)
 			(hide yes)
 			(show_name no)
@@ -8226,6 +8879,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VBUS")
+		(at 130.81 166.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "844cd04d-4eae-4b57-aee8-e5271d5a44c5")
+		(property "Reference" "#PWR024"
+			(at 130.81 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VSWI"
+			(at 130.81 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 130.81 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "76246e85-3f63-4be4-a35d-eb0b56b15676")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 238.76 54.61 180)
 		(unit 1)
@@ -8256,7 +8987,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 237.744 54.356 90)
 			(hide yes)
 			(show_name no)
@@ -8305,6 +9036,162 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VBUS")
+		(at 130.81 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85ce9bba-cb37-4a3a-8ce2-b18943259746")
+		(property "Reference" "#PWR015"
+			(at 130.81 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBAT"
+			(at 130.81 149.9394 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 130.81 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "15f11832-abcb-44d5-b1d8-0c5ed0f5cb3f")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 143.51 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "860d7522-c154-4f72-86e4-f040738768c1")
+		(property "Reference" "#FLG03"
+			(at 143.51 175.895 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 143.51 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 143.51 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a61ad779-4cab-4212-bc62-0b31297f7e30")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#FLG03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Regulator_Linear:AP2112K-1.8")
 		(at 71.12 171.45 0)
 		(unit 1)
@@ -8336,7 +9223,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+		(property "Footprint" "PulseOS Footprints:AP2112K-1.8TRG1_DIO"
 			(at 71.12 163.195 0)
 			(hide yes)
 			(show_name no)
@@ -8427,7 +9314,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 84.7852 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -8584,7 +9471,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 72.644 142.494 90)
 			(hide yes)
 			(show_name no)
@@ -8663,7 +9550,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 197.866 116.586 90)
 			(hide yes)
 			(show_name no)
@@ -8742,7 +9629,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-S2-WROVER"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 75.184 54.864 90)
 			(hide yes)
 			(show_name no)
@@ -8824,7 +9711,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "S2B-PH-K-S:JST_S2B-PH-K-S"
+		(property "Footprint" "PulseOS Footprints:JST_S2B-PH-K-S"
 			(at 144.78 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -9078,7 +9965,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 86.614 72.644 90)
 			(hide yes)
 			(show_name no)
@@ -9394,7 +10281,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 194.0052 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -9474,7 +10361,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOT5x3_DYA_TEX"
+		(property "Footprint" "PulseOS Footprints:SOT5x3_DYA_TEX"
 			(at 113.03 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -9870,7 +10757,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DMG3415U-7:SOT95P240X105-3N"
+		(property "Footprint" "PulseOS Footprints:DMG3415U"
 			(at 57.15 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -10111,6 +10998,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VBUS")
+		(at 130.81 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6495de2-aa2f-4b8e-8a5f-fd1d4bdbf172")
+		(property "Reference" "#PWR029"
+			(at 130.81 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 130.81 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 130.81 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91098dbd-7683-432e-b372-c8e85ed3cf90")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 83.82 179.07 0)
 		(unit 1)
@@ -10220,7 +11185,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm"
+		(property "Footprint" "PulseOS Footprints:CDBB-G"
 			(at 44.45 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -10269,6 +11234,7 @@
 		)
 	)
 	(symbol
+		(lib_name "ESD321DYAR_1")
 		(lib_id "esd321:ESD321DYAR")
 		(at 113.03 43.18 0)
 		(unit 1)
@@ -10300,7 +11266,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOT5x3_DYA_TEX"
+		(property "Footprint" "PulseOS Footprints:SOT5x3_DYA_TEX"
 			(at 113.03 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -10351,6 +11317,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 143.51 166.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef85d897-1068-4b3a-958d-bdb14ba8aaa8")
+		(property "Reference" "#FLG02"
+			(at 143.51 164.465 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 143.51 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 143.51 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c86c1e9a-6afc-45b5-a857-33a080669f74")
+		)
+		(instances
+			(project "pulse_os"
+				(path "/2da23019-ab99-45ac-90f5-7a766864eccc/fee3b620-80e8-498c-b712-104ac145f085"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 97.79 142.24 0)
 		(unit 1)
@@ -10384,7 +11428,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 98.7552 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -10464,7 +11508,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MCP73832T-2ACI_OT:SOT95P270X145-5N"
+		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
 			(at 243.84 45.72 0)
 			(hide yes)
 			(show_name no)
