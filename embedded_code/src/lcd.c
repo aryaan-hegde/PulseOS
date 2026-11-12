@@ -4,22 +4,25 @@
 #include <string.h>
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
-
-void init_spi();
-void init_display();
-void start_init(const uint8_t *start_seq);
+#include "LCD_Helpers/image.h"
+#include "LCD_Helpers/GUI_Paint.h"
 
 #define LCD_CS 1
 #define LCD_SCL 2
 #define LCD_SDA 3
 #define LCD_DC 0
-#define LCD_RST 4
+#define LCD_RST 12
 
 #define GC9A01A_INREGEN2 0xEF
 #define GC9A01A_INREGEN1 0xFE
 #define GC9A01A_MADCTL 0x36
-#define MADCTL_MX 0x40
-#define MADCTL_BGR 0x08
+#define MADCTL_MY 0x80  ///< Bottom to top
+#define MADCTL_MX 0x40  ///< Right to left
+#define MADCTL_MV 0x20  ///< Reverse Mode
+#define MADCTL_ML 0x10  ///< LCD refresh Bottom to top
+#define MADCTL_RGB 0x00 ///< Red-Green-Blue pixel order
+#define MADCTL_BGR 0x08 ///< Blue-Green-Red pixel order
+#define MADCTL_MH 0x04  ///< LCD refresh right to left
 #define GC9A01A_COLMOD 0x3A
 #define GC9A01A1_POWER1 0xC1   ///< Power Control 1
 #define GC9A01A1_POWER2 0xC3   ///< Power Control 2
@@ -34,6 +37,12 @@ void start_init(const uint8_t *start_seq);
 #define GC9A01A_INVON 0x21     ///< Display Inversion ON
 #define GC9A01A_SLPOUT 0x11    ///< Sleep Out
 #define GC9A01A_DISPON 0x29    ///< Display ON
+
+static uint16_t framebuf[240*240];
+
+void init_spi();
+void init_display();
+void start_init(const uint8_t *start_seq);
 
 static const uint8_t initcmd[] = {
     GC9A01A_INREGEN2, 0,
@@ -117,17 +126,6 @@ void init_display(){
     start_init(initcmd);
 }
 
-void start_init(const uint8_t *start_seq){
-    uint8_t cmd;
-    while ((cmd = *start_seq++) != 0) {
-        uint8_t x = *start_seq++;
-        uint8_t n = x & 0x7F;
-        command_seq(cmd, start_seq, n);
-        start_seq += n;
-        if (x & 0x80) sleep_ms(150);
-    }
-}
-
 void command_seq(uint8_t cmd, const uint8_t *args, size_t n){
     gpio_put(LCD_CS, 0);
     gpio_put(LCD_DC, 0);                      // command
@@ -139,10 +137,93 @@ void command_seq(uint8_t cmd, const uint8_t *args, size_t n){
     gpio_put(LCD_CS, 1);
 }
 
+void start_init(const uint8_t *start_seq){
+    uint8_t cmd;
+    while ((cmd = *start_seq++) != 0) {
+        uint8_t x = *start_seq++;
+        uint8_t n = x & 0x7F;
+        command_seq(cmd, start_seq, n);
+        start_seq += n;
+        if (x & 0x80) sleep_ms(150);
+    }
+}
+
+void fill_screen(uint16_t color){
+    uint8_t col[] = {0, 0, 0, 239};
+    uint8_t row[] = {0, 0, 0, 239};
+    command_seq(0x2A, col, 4); //column address set
+    command_seq(0x2B, row, 4); //row address set
+
+    uint8_t cmd = 0x2C; // memory write
+    gpio_put(LCD_CS, 0);
+    gpio_put(LCD_DC, 0);
+    spi_write_blocking(spi0, &cmd, 1);
+    gpio_put(LCD_DC, 1);
+
+    uint8_t px[2] = { color >> 8, color & 0xFF };
+    for (int i = 0; i < 240 * 240; i++)
+        spi_write_blocking(spi0, px, 2);
+    gpio_put(LCD_CS, 1);
+}
+
+static void set_window(uint16_t start_x, uint16_t start_y, uint16_t end_x, uint16_t end_y){
+    uint8_t col[] = {start_x >> 8, start_x & 0xFF, end_x >>8, end_x & 0xFF};
+    uint8_t row[] = {start_y >> 8, start_y & 0xFF, end_y >>8, end_y & 0xFF};
+    command_seq(0x2A, col, 4);
+    command_seq(0x2B, row, 4);
+}
+
+void flush_screen(void){
+    set_window(0,0,239,239);
+    command_seq(0x2C, (const uint8_t *)framebuf, sizeof(framebuf));
+}
+
+void display_image(const unsigned char *image, uint16_t x, uint16_t y, uint16_t w, uint16_t h){
+    uint8_t cmd = 0x2c; //memory write 
+    set_window(x, y, x+w-1, y+h-1);
+    command_seq(cmd, image, (size_t)(w*h*2));
+}
+
+void turnoff_seq(){
+    gpio_put(LCD_CS, 0);
+    gpio_put(LCD_DC, 0);
+    uint8_t turnoff_cmd = 0x28;
+    spi_write_blocking(spi0, &turnoff_cmd, 1);
+    gpio_put(LCD_CS, 1);
+}
+
+void DrawHeart(uint16_t color){
+    Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
+    //Paint_Clear(0x0000);
+    Paint_DrawCircle(90, 90, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(125, 90, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(90, 85, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(125, 85, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(108, 95, 10, color, 5, DRAW_FILL_FULL);
+    Paint_DrawLine(80, 90, 108, 130, color, 11, LINE_STYLE_SOLID);
+    Paint_DrawLine(135, 90, 108, 130, color, 11, LINE_STYLE_SOLID);
+    flush_screen();
+}
+
+void HeartWave(){
+    
+}
+
 int main(){
     init_spi();
     init_display();
-    for(;;){ 
+    
+    Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
+    Paint_Clear(0x0000);
+    //Paint_DrawString_EN(40, 180, "Shubh is so cute", &Font16, 0x0000, 0xFFFF);
+    
+    sleep_ms(5000);
+    for(;;){
+        DrawHeart(RED);
+        sleep_ms(1500);
+        DrawHeart(BLUE);
+        sleep_ms(500);
     }
-    return;
+    for(;;){}
+    return 0;
 }
