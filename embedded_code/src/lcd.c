@@ -209,21 +209,27 @@ void HeartWave(){
     
 }
 
-int main(){
+void lcd_init(void){
     init_spi();
     init_display();
-    
     Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
-    Paint_Clear(0x0000);
-    //Paint_DrawString_EN(40, 180, "Shubh is so cute", &Font16, 0x0000, 0xFFFF);
-    
-    sleep_ms(5000);
-    for(;;){
-        DrawHeart(RED);
-        sleep_ms(1500);
-        DrawHeart(BLUE);
-        sleep_ms(500);
-    }
-    for(;;){}
-    return 0;
 }
+
+// int main(){
+    // init_spi();
+    // init_display();
+    
+    // Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
+    // Paint_Clear(0x0000);
+    // //Paint_DrawString_EN(40, 180, "Shubh is so cute", &Font16, 0x0000, 0xFFFF);
+    // Paint_DrawTime(90, 90, , &Font24, RED, BLACK);
+    // // sleep_ms(5000);
+    // // for(;;){
+    // //     DrawHeart(RED);
+    // //     sleep_ms(1500);
+    // //     DrawHeart(BLUE);
+    // //     sleep_ms(500);
+    // // }
+    // for(;;){}
+    // return 0;
+// }
