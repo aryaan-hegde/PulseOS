@@ -66,7 +66,7 @@ int main(void) {
         }
 
         if (!clock_view_update(&view)) continue;   // nothing new to show
-
+        
         // ---- This is where the LCD will be updated later ----------------
         // if (view.time_changed) lcd_draw_time(view.time_text, view.time_changed_mask);
         // if (view.date_changed) lcd_draw_date(view.date_text);
