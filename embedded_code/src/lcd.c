@@ -14,6 +14,10 @@
 #define LCD_SDA 3   // SPI0 TX (MOSI)
 #define LCD_DC 4
 #define LCD_RST 12
+// Backlight (BL/LED pin). -1 = tied to 3.3 V (not controllable). Set it to a
+// GPIO number if you wire BL to the Pico, and the backlight will switch off
+// while the screen sleeps.
+#define LCD_BL_PIN -1
 
 #define GC9A01A_INREGEN2 0xEF
 #define GC9A01A_INREGEN1 0xFE
@@ -223,6 +227,11 @@ void HeartWave(){
 
 void lcd_init(void){
     init_spi();
+#if LCD_BL_PIN >= 0
+    gpio_init(LCD_BL_PIN);
+    gpio_set_dir(LCD_BL_PIN, 1);
+    gpio_put(LCD_BL_PIN, 1);
+#endif
     init_display();
     Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
 }
@@ -245,3 +254,22 @@ void lcd_init(void){
     // for(;;){}
     // return 0;
 // }
+// GC9A01A sleep: DISPOFF (0x28) blanks the panel, SLPIN (0x10) stops the
+// controller's oscillator and panel drive. Display memory is kept.
+void lcd_sleep(void){
+#if LCD_BL_PIN >= 0
+    gpio_put(LCD_BL_PIN, 0);
+#endif
+    command_seq(0x28, NULL, 0);   // display off
+    command_seq(0x10, NULL, 0);   // sleep in
+    sleep_ms(5);                  // datasheet: wait 5 ms after SLPIN
+}
+
+void lcd_wake(void){
+    command_seq(0x11, NULL, 0);   // sleep out
+    sleep_ms(120);                // datasheet: up to 120 ms before it is ready
+    command_seq(0x29, NULL, 0);   // display on
+#if LCD_BL_PIN >= 0
+    gpio_put(LCD_BL_PIN, 1);
+#endif
+}

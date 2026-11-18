@@ -121,6 +121,8 @@ void ui_core1_main(void) {
     bool heart_bright = false;
     uint32_t last_beat_ms = 0;
 
+    bool asleep = false;         // LCD currently in sleep mode
+
     while (true) {
         shared_state_snapshot(&s);
         uint32_t now_ms = to_ms_since_boot(get_absolute_time());
@@ -149,6 +151,22 @@ void ui_core1_main(void) {
                 result.bpm_shown = 0;
             }
             hr_result_publish(&result);
+        }
+
+        // ---- Screen sleep / wake (decided by core 0 from the IMU) ----
+        if (s.screen_asleep != asleep) {
+            asleep = s.screen_asleep;
+            if (asleep) {
+                lcd_sleep();
+            } else {
+                lcd_wake();
+                first = true;            // everything may have changed: redraw it all
+                heart_bpm = -1;
+            }
+        }
+        if (asleep) {                    // keep the BPM going, but don't draw
+            sleep_ms(UI_FRAME_MS);
+            continue;
         }
 
         // ---- Redraw whatever changed ----

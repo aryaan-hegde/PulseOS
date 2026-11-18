@@ -25,4 +25,11 @@ void lcd_flush_rows(uint16_t y0, uint16_t y1);  // send rows y0..y1 only
 void display_image(const unsigned char *image, uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 void turnoff_seq();
 
+// Screen sleep. lcd_sleep(): display off + controller sleep (screen goes
+// black, the picture in the LCD's memory is kept). lcd_wake(): reverse it
+// (blocks ~120 ms while the controller wakes). If LCD_BL_PIN is wired to a
+// GPIO, the backlight is switched too, which is where most of the power goes.
+void lcd_sleep(void);
+void lcd_wake(void);
+
 #endif

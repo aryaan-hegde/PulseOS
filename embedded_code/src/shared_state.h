@@ -31,6 +31,10 @@ typedef struct {
 
     // ---- Heart rate sensor ----
     bool hr_connected;          // MAX30101 answered and is streaming
+
+    // ---- Power ----
+    bool screen_asleep;         // no movement for SCREEN_SLEEP_MS: LCD off
+                                // (false by default, so the screen starts awake)
 } watch_state_t;
 
 // Call once on core 0 before launching core 1.

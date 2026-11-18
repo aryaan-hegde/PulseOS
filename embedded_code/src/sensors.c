@@ -48,6 +48,22 @@ static void steps_update(bool imu_ok, uint16_t raw) {
     }
 }
 
+// Screen sleep: time of the last movement the IMU saw.
+static uint32_t last_movement_ms;
+static bool screen_asleep;
+
+static void screen_update(bool imu_ok, const imu_data_t *d, uint32_t now_ms) {
+    bool moving = d->total > WAKE_ACCEL_MS2 ||
+                  d->motion == MOTION_WALKING || d->motion == MOTION_RUNNING;
+    // Without the IMU we could never wake up again, so stay awake.
+    if (!imu_ok || moving) last_movement_ms = now_ms;
+    bool asleep = now_ms - last_movement_ms >= SCREEN_SLEEP_MS;
+    if (asleep != screen_asleep) {
+        screen_asleep = asleep;
+        printf("[core0] Screen %s\n", asleep ? "off (no movement)" : "on (movement)");
+    }
+}
+
 // Loop timing, so we can prove drawing no longer stalls the sensors.
 static uint32_t last_pass_us;
 static uint32_t slowest_pass_us;
@@ -141,6 +157,7 @@ void sensors_init(void) {
     last_pass_us = time_us_32();
     last_status_ms = to_ms_since_boot(get_absolute_time());
     hr_last_try_ms = last_status_ms - HR_RETRY_MS;   // try the HR sensor right away
+    last_movement_ms = last_status_ms;               // start awake
     printf("Commands:  set YYYY-MM-DD HH:MM:SS  |  time  |  ppg on  |  ppg off\n");
 }
 
@@ -173,6 +190,8 @@ void sensors_poll(void) {
     steps_update(next.imu_connected, d.steps);
     next.steps = steps_today;
     next.hr_connected = hr_connected;
+    screen_update(next.imu_connected, &d, now_ms);
+    next.screen_asleep = screen_asleep;
 
     if (memcmp(&next, &state, sizeof next) != 0) {
         state = next;
