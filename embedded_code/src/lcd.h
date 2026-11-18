@@ -1,3 +1,6 @@
+#ifndef LCD_H
+#define LCD_H
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -5,15 +8,21 @@
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 
-void DrawHeart(uint16_t color);
+// Rows covered by DrawHeart(), for lcd_flush_rows().
+#define HEART_Y0 60
+#define HEART_Y1 140
+
+void lcd_init(void);
+void DrawHeart(uint16_t color);      // draws into the framebuffer only
 void HeartWave();
 void init_spi();
 void init_display();
 void start_init(const uint8_t *start_seq);
 void command_seq(uint8_t cmd, const uint8_t *args, size_t n);
-void start_init(const uint8_t *start_seq);
 void fill_screen(uint16_t color);
-static void set_window(uint16_t start_x, uint16_t start_y, uint16_t end_x, uint16_t end_y);
-void flush_screen(void);
+void flush_screen(void);                        // send the whole framebuffer
+void lcd_flush_rows(uint16_t y0, uint16_t y1);  // send rows y0..y1 only
 void display_image(const unsigned char *image, uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 void turnoff_seq();
+
+#endif

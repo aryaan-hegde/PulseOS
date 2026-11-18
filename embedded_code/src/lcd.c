@@ -7,10 +7,12 @@
 #include "LCD_Helpers/image.h"
 #include "LCD_Helpers/GUI_Paint.h"
 
-#define LCD_CS 1
-#define LCD_SCL 2
-#define LCD_SDA 3
-#define LCD_DC 0
+// LCD pins (breadboard). DC and CS must NOT be GP0/GP1: those are UART0
+// TX/RX, which carry the serial monitor through the debug probe.
+#define LCD_CS 5
+#define LCD_SCL 2   // SPI0 SCK
+#define LCD_SDA 3   // SPI0 TX (MOSI)
+#define LCD_DC 4
 #define LCD_RST 12
 
 #define GC9A01A_INREGEN2 0xEF
@@ -178,6 +180,16 @@ void flush_screen(void){
     command_seq(0x2C, (const uint8_t *)framebuf, sizeof(framebuf));
 }
 
+// Send only rows y0..y1 (inclusive) of the framebuffer. Full-width rows are
+// contiguous in memory, so this is one SPI transfer. A 48-row band takes
+// about 1/5 of the time of a full-screen flush.
+void lcd_flush_rows(uint16_t y0, uint16_t y1){
+    if (y1 > 239) y1 = 239;
+    if (y0 > y1) return;
+    set_window(0, y0, 239, y1);
+    command_seq(0x2C, (const uint8_t *)&framebuf[y0 * 240], (size_t)(y1 - y0 + 1) * 240 * 2);
+}
+
 void display_image(const unsigned char *image, uint16_t x, uint16_t y, uint16_t w, uint16_t h){
     uint8_t cmd = 0x2c; //memory write 
     set_window(x, y, x+w-1, y+h-1);
@@ -193,16 +205,16 @@ void turnoff_seq(){
 }
 
 void DrawHeart(uint16_t color){
-    Paint_NewImage(framebuf, 240, 240, 0, 0, 16);
     //Paint_Clear(0x0000);
-    Paint_DrawCircle(90, 90, 20, color, 5, DRAW_FILL_FULL);
-    Paint_DrawCircle(125, 90, 20, color, 5, DRAW_FILL_FULL);
-    Paint_DrawCircle(90, 85, 20, color, 5, DRAW_FILL_FULL);
-    Paint_DrawCircle(125, 85, 20, color, 5, DRAW_FILL_FULL);
-    Paint_DrawCircle(108, 95, 10, color, 5, DRAW_FILL_FULL);
-    Paint_DrawLine(80, 90, 108, 130, color, 11, LINE_STYLE_SOLID);
-    Paint_DrawLine(135, 90, 108, 130, color, 11, LINE_STYLE_SOLID);
-    flush_screen();
+    const uint16_t cx = 120;   // horizontal centre of the 240 px screen
+    Paint_DrawCircle(cx - 17, 90, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(cx + 17, 90, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(cx - 17, 85, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(cx + 17, 85, 20, color, 5, DRAW_FILL_FULL);
+    Paint_DrawCircle(cx, 95, 10, color, 5, DRAW_FILL_FULL);
+    Paint_DrawLine(cx - 28, 90, cx, 130, color, 11, LINE_STYLE_SOLID);
+    Paint_DrawLine(cx + 28, 90, cx, 130, color, 11, LINE_STYLE_SOLID);
+    // Caller sends it to the screen (rows HEART_Y0..HEART_Y1 via lcd_flush_rows).
 }
 
 void HeartWave(){

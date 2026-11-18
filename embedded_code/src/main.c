@@ -1,47 +1,29 @@
+// PulseOS main program.
+//
+//   Core 0: sensors (RTC, IMU, serial commands) -> shared_state   [sensors.c]
+//   Core 1: shared_state -> LCD watch face                          [ui.c]
+//
+// Splitting the work means slow screen updates can never delay the sensors:
+// the IMU needs servicing every few ms and the heart rate FIFO overflows
+// after ~320 ms, while a full-screen LCD send takes ~90 ms.
+
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <string.h>
 #include "pico/stdlib.h"
-#include "hardware/spi.h"
-#include "LCD_Helpers/image.h"
-#include "LCD_Helpers/GUI_Paint.h"
-#include "clock_view.h"
-#include "lcd.h"
+#include "pico/multicore.h"
+#include "shared_state.h"
+#include "sensors.h"
+#include "ui.h"
 
-#define LINE_MAX_LEN 48
-
-bool heart_is_red = false;
-
-int main(){
+int main(void) {
     stdio_init_all();
     sleep_ms(1000);          // give the serial monitor a moment to attach
-    lcd_init();
-    Paint_Clear(0x0000);
-    flush_screen();
-    rtc_init();              // keeps retrying inside rtc_update() if it fails
+    printf("\n=== PulseOS ===\n");
 
-    clock_view_t view;
-    
-    clock_view_init(&view);
+    shared_state_init();     // before core 1 starts reading it
+    multicore_launch_core1(ui_core1_main);
 
-    //Paint_DrawString_EN(40, 180, "Shubh is so cute", &Font16, 0x0000, 0xFFFF);
-
-    PAINT_TIME view_formatted;
+    sensors_init();
     while (true) {
-        rtc_update();        // reconnects if the RTC is missing
-        clock_view_update(&view);
-        view_formatted.Day = view.now.day;
-        view_formatted.Hour =view.now.hour;
-        view_formatted.Min = view.now.minute;
-        view_formatted.Month = view.now.month;
-        view_formatted.Sec = view.now.second;
-        view_formatted.Year = view.now.year;
-        Paint_Clear(0x0000);
-        Paint_DrawTime(60, 150, &view_formatted, &Font24, RED, BLACK);
-        flush_screen();
-        heart_is_red = !heart_is_red;
-        DrawHeart(heart_is_red ? RED : BLUE);
+        sensors_poll();
     }
-    return 0;
 }
