@@ -493,6 +493,7 @@
       "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
+      "same_local_global_power": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
       "similar_power": "warning",
@@ -536,8 +537,8 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
-    "netclass_assignments": null,
+    "net_colors": {},
+    "netclass_assignments": {},
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -813,7 +814,7 @@
         "uuid": "2da23019-ab99-45ac-90f5-7a766864eccc"
       }
     ],
-    "used_designators": "U1-5,U7-10,J1-4,#FLG1-7,R1-21,R23-42,#PWR1-62,#PWR101-116,#PWR118,#PWR122,#PWR124-131,#PWR138-146,L1-3,C1-39,PD1-2,SW1-2,X1,A1,D1-2,Y2,XTAL1-2,Q1-3,CR1-3,TP1,H1-3",
+    "used_designators": "#FLG1-7,#PWR1-62,#PWR101-116,#PWR118,#PWR122,#PWR124-131,#PWR138-146,A1,C1-39,CR1-3,D1-2,H1-3,J1-4,L1-3,PD1-2,Q1-3,R1-21,R23-42,SW1-2,TP1,U1-5,U7-10,X1,XTAL1-2,Y2",
     "variants": []
   },
   "sheets": [
@@ -832,6 +833,10 @@
     [
       "1c27279a-8186-4eec-b1c3-ffd382720af4",
       "Peripherals"
+    ],
+    [
+      "955a3bce-4f4a-4da4-abde-d0b5e1f88d9c",
+      "MCU Proton"
     ]
   ],
   "text_variables": {},
