@@ -93,3 +93,33 @@ int heartrate_read(uint32_t *red, uint32_t *ir)
     *ir = (((uint32_t)data[3] << 16) | ((uint32_t)data[4] << 8) | data[5]) & 0x3FFFF;
     return 1;
 }
+
+int heartrate_read_fifo(uint32_t *green, uint32_t *ir, int max)
+{
+    if (!green || !ir || max <= 0)
+        return -1;
+    uint8_t ptr[3]; // Registers 0x04..0x06: write, overflow, read
+    if (!i2c_bus_read_reg(HR_BUS, HR_ADDR, 0x04, ptr, 3))
+        return -1;
+    if (ptr[1] & 0x1F)
+        return -2;
+    int n = (ptr[0] - ptr[2]) & 0x1F; // unread samples (pointers wrap at 32)
+    if (n > max)
+        n = max;
+    if (n > HEARTRATE_FIFO_DEPTH)
+        n = HEARTRATE_FIFO_DEPTH;
+    if (n == 0)
+        return 0;
+
+    // The FIFO data register auto-advances, so one long read drains n samples.
+    uint8_t data[HEARTRATE_FIFO_DEPTH * 6];
+    if (!i2c_bus_read_reg(HR_BUS, HR_ADDR, 0x07, data, (size_t)n * 6))
+        return -1;
+    for (int i = 0; i < n; ++i)
+    {
+        const uint8_t *d = &data[i * 6];
+        green[i] = (((uint32_t)d[0] << 16) | ((uint32_t)d[1] << 8) | d[2]) & 0x3FFFF;
+        ir[i] = (((uint32_t)d[3] << 16) | ((uint32_t)d[4] << 8) | d[5]) & 0x3FFFF;
+    }
+    return n;
+}

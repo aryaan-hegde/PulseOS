@@ -29,8 +29,8 @@ typedef struct {
     motion_state_t motion;
     uint16_t steps;             // only counts with IMU_USE_BUILTIN_CLASSIFIER = 1
 
-    // ---- Heart rate (milestone 2+) ----
-    uint16_t bpm;               // 0 = no reading to show
+    // ---- Heart rate sensor ----
+    bool hr_connected;          // MAX30101 answered and is streaming
 } watch_state_t;
 
 // Call once on core 0 before launching core 1.
@@ -41,5 +41,26 @@ void shared_state_publish(const watch_state_t *s);
 
 // Core 1: copy the latest shared values into *out.
 void shared_state_snapshot(watch_state_t *out);
+
+// ---- PPG sample queue: core 0 -> core 1 -----------------------------------
+// Core 0 pushes every green sample (100 per second); core 1 pops them into
+// the BPM algorithm. Single producer / single consumer, no lock needed.
+// 512 samples = 5 s of slack if core 1 is busy drawing.
+#define PPG_QUEUE_SIZE    512
+#define PPG_RESET_MARKER  0xFFFFFFFFu   // pushed after a sensor (re)start: clear history
+
+bool     ppg_queue_push(uint32_t sample);           // core 0; false if full (sample dropped)
+int      ppg_queue_pop(uint32_t *out, int max);     // core 1; returns how many were copied
+uint32_t ppg_queue_dropped(void);                   // samples lost because the queue was full
+
+// ---- Heart rate result: core 1 -> core 0 (for the serial status line) ------
+typedef struct {
+    uint16_t bpm_shown;         // what the watch face shows, 0 = "--"
+    float    bpm_raw;           // latest 12 s window estimate, 0 = none
+    uint32_t analysis_us;       // how long that estimate took to compute
+} hr_result_t;
+
+void hr_result_publish(const hr_result_t *r);
+void hr_result_get(hr_result_t *out);
 
 #endif

@@ -261,6 +261,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', help='Serial port, e.g. COM5 or /dev/ttyACM0')
     parser.add_argument('--self-test', action='store_true')
+    parser.add_argument('--record', metavar='FILE.csv',
+                        help='also save every sample as n,green,ir (for host_test/compare_hr_algo.py)')
     args = parser.parse_args()
     if args.self_test:
         self_test()
@@ -276,6 +278,10 @@ def main():
             print(port.device, port.description)
         parser.error('Pass --port with one of the ports listed above.')
     device = serial.Serial(args.port, 115200, timeout=0.2)
+    # The main PulseOS firmware only streams samples after "ppg on"
+    # (heartrate_test streams all the time and ignores this).
+    device.write(b'ppg on\r\n')
+    record = open(args.record, 'w') if args.record else None
     events = queue.Queue(maxsize=5000)
     stop = threading.Event()
 
@@ -290,6 +296,8 @@ def main():
                     item = tuple(int(v) for v in fields[1:])
                     if len(item) != 3:
                         continue
+                    if record:
+                        record.write(f'{item[0]},{item[1]},{item[2]}\n')
                     try:
                         events.put_nowait(item)
                     except queue.Full:
@@ -398,7 +406,14 @@ def main():
     finally:
         stop.set()
         thread.join(timeout=1)
+        try:
+            device.write(b'ppg off\r\n')
+        except Exception:
+            pass
         device.close()
+        if record:
+            record.close()
+            print('Saved', args.record)
 
 if __name__ == '__main__':
     main()
