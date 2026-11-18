@@ -3,3 +3,9 @@
 fp-info-cache
 *.kicad_prl
 .history/
+# Python
+__pycache__/
+*.pyc
+
+# KiCad local history (its own git repo)
+.history/
