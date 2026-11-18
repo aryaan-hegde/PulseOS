@@ -27,7 +27,7 @@ typedef struct {
     // ---- Motion (from imu) ----
     bool imu_connected;
     motion_state_t motion;
-    uint16_t steps;             // only counts with IMU_USE_BUILTIN_CLASSIFIER = 1
+    uint32_t steps;             // steps today (BNO085 step counter, reset at midnight)
 
     // ---- Heart rate sensor ----
     bool hr_connected;          // MAX30101 answered and is streaming

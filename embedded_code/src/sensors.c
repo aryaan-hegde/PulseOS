@@ -27,6 +27,27 @@ static uint32_t hr_last_poll_ms, hr_last_try_ms, hr_last_sample_ms;
 static uint32_t ppg_count;      // sample number for the PPG serial stream
 static bool ppg_stream;         // "ppg on": print every sample for plot_heartrate.py
 
+// Steps today. The BNO085's counter restarts from 0 whenever the IMU resets,
+// so we add up the increases ourselves and clear the total at midnight.
+static uint32_t steps_today;
+static uint16_t steps_last_raw;
+static uint8_t steps_day;           // day of month the total belongs to (0 = unknown yet)
+
+static void steps_update(bool imu_ok, uint16_t raw) {
+    if (imu_ok) {
+        if (raw >= steps_last_raw) steps_today += raw - steps_last_raw;
+        else steps_today += raw;    // IMU restarted: its count began again at 0
+        steps_last_raw = raw;
+    }
+    if (view.valid) {
+        if (steps_day != 0 && view.now.day != steps_day) {
+            steps_today = 0;        // new day
+            printf("[core0] New day: step count reset\n");
+        }
+        steps_day = view.now.day;
+    }
+}
+
 // Loop timing, so we can prove drawing no longer stalls the sensors.
 static uint32_t last_pass_us;
 static uint32_t slowest_pass_us;
@@ -149,7 +170,8 @@ void sensors_poll(void) {
     imu_data_t d;
     next.imu_connected = imu_get_data(&d);
     next.motion = d.motion;                       // MOTION_UNKNOWN if not connected
-    next.steps = next.imu_connected ? d.steps : state.steps;
+    steps_update(next.imu_connected, d.steps);
+    next.steps = steps_today;
     next.hr_connected = hr_connected;
 
     if (memcmp(&next, &state, sizeof next) != 0) {
@@ -169,11 +191,11 @@ void sensors_poll(void) {
             snprintf(hr_text, sizeof hr_text, "%u bpm (window %.1f, %lu us)",
                      hr.bpm_shown, (double)hr.bpm_raw, (unsigned long)hr.analysis_us);
         }
-        printf("[core0] %s:%s  RTC %s  IMU %-7s  HR %s  slowest pass %lu us  dropped %lu\n",
+        printf("[core0] %s:%s  RTC %s  IMU %-7s  steps %lu  HR %s  slowest pass %lu us  dropped %lu\n",
                state.time_text, state.seconds_text,
                state.rtc_connected ? "ok" : "MISSING",
                state.imu_connected ? imu_motion_name(state.motion) : "MISSING",
-               hr_text, (unsigned long)slowest_pass_us,
+               (unsigned long)state.steps, hr_text, (unsigned long)slowest_pass_us,
                (unsigned long)ppg_queue_dropped());
         slowest_pass_us = 0;
     }

@@ -5,8 +5,9 @@
 // while core 0 must stay free to service the sensors every few ms.
 //
 // Watch face layout (240 x 240 round screen, rows from the top):
-//    36- 52  motion status   "STILL" / "WALKING" / "NO IMU"
-//    60-140  heart            beats at the measured BPM, number in the middle
+//    22- 34  motion status   "STILL" / "WALKING" / "NO IMU" (small)
+//    38- 54  steps           "1234 steps"
+//    60-140  heart           beats at the measured BPM, number in the middle
 //   144-192  time             "14:05" large + seconds small
 //   200-212  date             "Tue 03 Nov 2026"
 
@@ -22,8 +23,10 @@
 #define BG          BLACK
 #define DARK_RED    0x7800
 
-#define STATUS_Y0   36
-#define STATUS_Y1   52
+#define STATUS_Y0   22
+#define STATUS_Y1   34
+#define STEPS_Y0    38
+#define STEPS_Y1    54
 #define TIME_Y0     144
 #define TIME_Y1     192
 #define DATE_Y0     200
@@ -70,11 +73,19 @@ static void draw_date(const watch_state_t *s) {
 static void draw_status(const watch_state_t *s) {
     clear_rows(STATUS_Y0, STATUS_Y1);
     if (!s->imu_connected) {
-        draw_centered(STATUS_Y0, "NO IMU", &Font16, DARK_RED, BG);
+        draw_centered(STATUS_Y0, "NO IMU", &Font12, DARK_RED, BG);
     } else if (s->motion != MOTION_UNKNOWN) {
-        draw_centered(STATUS_Y0, imu_motion_name(s->motion), &Font16, CYAN, BG);
+        draw_centered(STATUS_Y0, imu_motion_name(s->motion), &Font12, CYAN, BG);
     }
     lcd_flush_rows(STATUS_Y0, STATUS_Y1);
+}
+
+static void draw_steps(const watch_state_t *s) {
+    char text[20];
+    snprintf(text, sizeof text, "%lu steps", (unsigned long)s->steps);
+    clear_rows(STEPS_Y0, STEPS_Y1);
+    draw_centered(STEPS_Y0, text, &Font16, WHITE, BG);
+    lcd_flush_rows(STEPS_Y0, STEPS_Y1);
 }
 
 // Heart with the BPM (or "--") in the middle, drawn on the heart's colour.
@@ -151,6 +162,9 @@ void ui_core1_main(void) {
         }
         if (first || s.imu_connected != shown.imu_connected || s.motion != shown.motion) {
             draw_status(&s);
+        }
+        if (first || s.steps != shown.steps) {
+            draw_steps(&s);
         }
 
         // Heart: flash bright once per beat (every 60000/bpm ms), dim otherwise.
